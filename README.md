@@ -16,4 +16,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
-!["Navigation Bar"] (https://github.com/hufany21/tweeter/blob/master/public/images/Navigation%20Bar.png?raw=true)
+
+!["Navigation Bar"](https://github.com/hufany21/tweeter/blob/master/public/images/Navigation%20Bar.png?raw=true)
