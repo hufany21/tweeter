@@ -1,0 +1,55 @@
+.new-tweet{
+  width: 100%;
+}
+
+div.up{
+  display: flex;
+  justify-content:space-between;
+  padding: 1em;
+
+}
+
+button {
+
+  flex-direction: column;
+  background-color: blue ;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  font-family: 'Bungee', cursive;
+}
+
+#counter{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  font-family: 'Bungee', cursive;
+
+}
+
+#tweet-text{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: none; 
+  border: 0;
+  border-bottom: solid;
+}
+button:active{
+  background: black
+
+}
+#er{
+color: crimson;
+border-style: solid;
+border-color: crimson;
+text-align: center;
+}
+
+
+label {display:block;}
