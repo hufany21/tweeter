@@ -39,14 +39,14 @@ top: 0;
 }
 @keyframes updown {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-75%);
   }
 
   50% {
-    transform: translateY(100%);
+    transform: translateY(75%);
   }
 
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-75%);
   }
 }
