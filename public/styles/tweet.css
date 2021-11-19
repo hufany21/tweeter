@@ -2,19 +2,14 @@ article {
   transition: box-shadow .3s;
   border-style: solid;
   margin:  1.5em;
-  padding: 1em
-  
+  padding: 1em;
 }
-
 
 #name_avatars_handle { 
   display: flex;
   justify-content:space-between;
   align-items: baseline;
-
 }
-
-
 
 #content{
   display: block;
@@ -24,14 +19,12 @@ article {
   margin-inline-end: 0px;
 }
 
-
-
 footer {
 display: flex;  
 justify-content: space-between;
 align-items: baseline;
-font-size: 0.5em;}
-
+font-size: 0.5em;
+}
 
 .fa {
 color: darkblue;

@@ -4,10 +4,6 @@ Full width of the viewport
 #FFFFFF as its default font colour
 <span> within the <nav> uses Bungee as its default font-family
 1.5ems of space on the right and left between the content and the edges */
-
-
-
-
 .nav-container {
 display: flexbox;
 width: 100%;
@@ -17,8 +13,6 @@ padding: 1.5em;
 position: fixed;
 top: 0;
 }
-
-
 .logo {
   display: flex;
   align-items: center;
@@ -34,8 +28,6 @@ top: 0;
   Font-family: sans-serif;
   padding-bottom: 0.5em;
 }
-
-
 .fas {
   display: flex;
   justify-content: flex-end;
@@ -44,8 +36,6 @@ top: 0;
   color: #cc12b3;
   font-size: 15px;
   animation: updown 4s ease infinite;
-  
- 
 }
 @keyframes updown {
   0% {

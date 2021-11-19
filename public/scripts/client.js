@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 }
 
-const createTweetElement = function(tweet) { 
+const createTweetElement = function(tweet) {  //insert data into html
   let article =$(`<article class="tweet"></article>`);
   const name_avatars_handle =$(`<header id=name_avatars_handle ><p><img id='avatars' src="${tweet.user.avatars}width="45" height="55">${tweet.user.name} </p><p id='handle'>${tweet.user.handle}</p> </header>`);
  
@@ -58,51 +58,48 @@ article.append(created_at);
   return article;
 };
 
-$("form").on("submit", function (event) {
+$("form").on("submit", function (event) { //when tweet button pushed 
   event.preventDefault();
   const $tweetText = document.getElementById('tweet-text') 
   const $counter = document.getElementById("counter")
-$.post("/tweets", $(this).serialize())
 
-if ($(this).serialize().length === 5) {
-  $('#er').html("❗You forgot to tell us what your humming about, try again!❗");
-  return $('#er').slideDown("slow")
-}
-if ($(this).serialize().length > 145){
-   $('#er').html("❗Too long! Can we try being a little more concise?❗")
-   return $('#er').slideDown("slow")
-}
-if ($(this).serialize().length < 140) {
-  $.ajax({
+  $.post("/tweets", $(this).serialize()).then(function () { //post to /tweets
+  $.ajax({                          // after post, get tweet and add to page 
     url: "/tweets",
     method: "GET",
   }).then((result) => {
+    console.log(result)
     const index = result.length-1
-   $("#tweet-con").append(createTweetElement(result[index]));
+    console.log(index)
+   $("#tweet-con").append(createTweetElement(result[index]));//adds tweet to html
    return $('#er').slideUp("slow") 
-  }  
+  })
+  })
 
-)}
-$tweetText.value = ''
-$counter.value = '140'
+  if ($(this).serialize().length === 5) { //error if no text
+  $('#er').html("❗You forgot to tell us what your humming about, try again!❗");
+  return $('#er').slideDown("slow")
+  }
+  if ($(this).serialize().length > 145){ //error if more than 140char
+   $('#er').html("❗Too long! Can we try being a little more concise?❗")
+   return $('#er').slideDown("slow")
+  }
+  if ($(this).serialize().length <= 140) {
+    $tweetText.value = ''  //clear text area
+    $("#counter").html('140') //reset counter 
+  return $('#er').slideUp("slow")
+  }
 });
-
-
-
 
 
 const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (data) {
       renderTweets(data);
-  });
+    });
 }
 
 loadtweets()
-
-
-
-
 
 });
 

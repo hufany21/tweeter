@@ -10,7 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-
 main {
   display:flex; 
   flex-direction:row;
@@ -18,12 +17,7 @@ main {
    margin: 1.5em;
    align-content: center;
   width: 90%
-
-
 }
-
-
-
 
 body {
   color: #545149;

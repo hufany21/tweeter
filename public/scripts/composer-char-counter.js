@@ -19,6 +19,12 @@
     i--;
     updateDisplay();
     }
+    $("form").on("submit", function (event) { 
+      return i = 140
     })
+
+    })
+
+  
 });
  
