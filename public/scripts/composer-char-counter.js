@@ -9,20 +9,27 @@
   document.getElementById("counter").innerHTML = i;
 };
 
-  $("#tweet-text").on('keypress', function() {
-    if(i < 0){
+  $("#tweet-text").on('keydown', function(event) {
+    if(i <= 0){
       $text.style.color = "red"
       i--;
      updateDisplay();
-    } else {
-    console.log("test in else")
+    } 
+    const key = event.key;
+
+    if (key === "Backspace") {
+      i++
+      updateDisplay();
+    }
+
+    else {
     i--;
     updateDisplay();
     }
     $("form").on("submit", function (event) { 
       return i = 140
     })
-
+   
     })
 
   

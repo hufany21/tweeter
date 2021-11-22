@@ -8,7 +8,7 @@ Full width of the viewport
 display: flexbox;
 width: 100%;
 height: 120px;
-background-color: #4056A1;
+background-image: url("/images/1.png");
 padding: 1.5em;
 position: fixed;
 top: 0;
@@ -50,3 +50,11 @@ top: 0;
     transform: translateY(-75%);
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .nav-container {
+   background-color: #4056A1;
+   background-image: none;
+    }
+   
+  }

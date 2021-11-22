@@ -3,16 +3,38 @@
 // The name should be centered below the avatar
 // The background-color should be a different colour than the nav and the body */
 
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
+.header_container {
   height: 400px;
-  background-image: url("/images/1.png");
+  width: 100%;
   margin-top: 120px;
-  text-align: center
-  };
+  background-color:#0059b8;
+  background-image: url("/images/1.png");
+}
 
- 
+#picture {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+#name {
+  display: flex;
+  color:seashell;
+  justify-content: center;
+}
+@media only screen and (min-width: 1024px) {
+  .header_container {
+  height: 350px;  
+  margin-top: 200px;
+  margin-left: 50px;
+  width: 30%;
+  }
+ #picture {
+  margin-top: 15px;
+ }
+ #name {
+  margin-top: 0px;
+ }
+};
+
+
+

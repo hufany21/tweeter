@@ -33,14 +33,14 @@ $(document).ready(function() {
  const renderTweets = function(tweets) {
   for(let i of tweets){
   let k = createTweetElement(i)
-  $('#tweet-con').append(k);
+  $('#tweet-con').prepend(k);
   }
 
 }
 
 const createTweetElement = function(tweet) {  //insert data into html
   let article =$(`<article class="tweet"></article>`);
-  const name_avatars_handle =$(`<header id=name_avatars_handle ><p><img id='avatars' src="${tweet.user.avatars}width="45" height="55">${tweet.user.name} </p><p id='handle'>${tweet.user.handle}</p> </header>`);
+  const name_avatars_handle =$(`<header id=name_avatars_handle ><p><img id='avatars' src="${tweet.user.avatars}">${tweet.user.name} </p><p id='handle'>${tweet.user.handle}</p> </header>`);
  
   const content = $(`<p id='content'>${tweet.content.text}</p> <hr>`)
   const created_at =$(`<footer><p id='created_at'>${timeago.format(tweet.created_at)}</p>
@@ -68,10 +68,8 @@ $("form").on("submit", function (event) { //when tweet button pushed
     url: "/tweets",
     method: "GET",
   }).then((result) => {
-    console.log(result)
     const index = result.length-1
-    console.log(index)
-   $("#tweet-con").append(createTweetElement(result[index]));//adds tweet to html
+   $("#tweet-con").prepend(createTweetElement(result[index]));//adds tweet to html
    return $('#er').slideUp("slow") 
   })
   })
