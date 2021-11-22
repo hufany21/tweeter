@@ -17,6 +17,6 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
-!["Navigation Bar"](https://github.com/hufany21/tweeter/blob/master/public/images/Navigation%20Bar.png?raw=true)
-!["Tweets"](https://github.com/hufany21/tweeter/blob/master/public/images/Tweet%20display.png?raw=true)
-!["Compose Tweet Container"](https://github.com/hufany21/tweeter/blob/master/public/images/Writing%20a%20tweet.png?raw=true)
+!["Desktop View"](https://github.com/hufany21/tweeter/blob/master/public/images/Desktop%20View.png?raw=true)
+!["Mobile View"](https://github.com/hufany21/tweeter/blob/master/public/images/Mobile%20View.png?raw=true)
+!["Tweets"](https://github.com/hufany21/tweeter/blob/master/public/images/Tweets.png?raw=true)
