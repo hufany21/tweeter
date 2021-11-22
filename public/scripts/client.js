@@ -61,18 +61,6 @@ article.append(created_at);
 $("form").on("submit", function (event) { //when tweet button pushed 
   event.preventDefault();
   const $tweetText = document.getElementById('tweet-text') 
-  const $counter = document.getElementById("counter")
-
-  $.post("/tweets", $(this).serialize()).then(function () { //post to /tweets
-  $.ajax({                          // after post, get tweet and add to page 
-    url: "/tweets",
-    method: "GET",
-  }).then((result) => {
-    const index = result.length-1
-   $("#tweet-con").prepend(createTweetElement(result[index]));//adds tweet to html
-   return $('#er').slideUp("slow") 
-  })
-  })
 
   if ($(this).serialize().length === 5) { //error if no text
   $('#er').html("❗You forgot to tell us what your humming about, try again!❗");
@@ -82,11 +70,19 @@ $("form").on("submit", function (event) { //when tweet button pushed
    $('#er').html("❗Too long! Can we try being a little more concise?❗")
    return $('#er').slideDown("slow")
   }
-  if ($(this).serialize().length <= 140) {
-    $tweetText.value = ''  //clear text area
-    $("#counter").html('140') //reset counter 
-  return $('#er').slideUp("slow")
-  }
+
+  $.post("/tweets", $(this).serialize()).then(function () { //post to /tweets
+    $.ajax({                          // after post, get tweet and add to page 
+      url: "/tweets",
+      method: "GET",
+    }).then((result) => {    //if successful 
+      const index = result.length-1   
+     $("#tweet-con").prepend(createTweetElement(result[index]));//adds tweet to html
+     $tweetText.value = ''  //clear text area
+     $("#counter").html('140') //reset counter 
+     return $('#er').slideUp("slow")
+    })
+    })
 });
 
 

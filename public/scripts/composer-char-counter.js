@@ -3,7 +3,7 @@
 
  $(document).ready(function() {
   const $text = document.getElementById("counter")
-  let textLength = 0;
+
   let i = 140
   const updateDisplay = () => {
   document.getElementById("counter").innerHTML = i;
@@ -27,6 +27,7 @@
     updateDisplay();
     }
     $("form").on("submit", function (event) { 
+      $text.style.color = "black"
       return i = 140
     })
    
