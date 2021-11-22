@@ -10,14 +10,14 @@
 };
 
   $("#tweet-text").on('keydown', function(event) {
-    if(i <= 0){
+    if(i <= 0){    // if char under 0, turn counter red
       $text.style.color = "red"
       i--;
      updateDisplay();
     } 
     const key = event.key;
 
-    if (key === "Backspace") {
+    if (key === "Backspace") { // attempt at counter reversing when letters deleted
       i++
       updateDisplay();
     }
@@ -26,7 +26,7 @@
     i--;
     updateDisplay();
     }
-    $("form").on("submit", function (event) { 
+    $("form").on("submit", function (event) {    // on submit, refresh counter and make it black
       $text.style.color = "black"
       return i = 140
     })
