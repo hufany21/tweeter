@@ -4,16 +4,15 @@ $(document).ready(function () {
 
   let count = 140
   const updateDisplay = () => {
-    document.getElementById("counter").innerHTML = i;
+    document.getElementById("counter").innerHTML = count;
   };
 
   $("#tweet-text").on('keyup', function (event) {
 
-
     count = 140 - $(this).val().length;
 
     if (event.key === "Backspace") {
-      i + 1;
+      count + 1;
     }
 
     if ($(this).val().length > 139) {    // if char under 0, turn counter red
@@ -28,7 +27,13 @@ $(document).ready(function () {
     }
 
     $("form").on("submit", function (event) {    // on submit, refresh counter and make it black
-      return i = 140
+      
+      if ($(this).val().length > 139) {    // if char under 0, turn counter red
+        $text.style.color = "red"
+      }  
+    
+      return count = 140
+      
     })
 
   })
